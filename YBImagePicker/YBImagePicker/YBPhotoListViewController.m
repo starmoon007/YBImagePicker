@@ -28,6 +28,7 @@
 
 @property (strong, nonatomic) ALAssetsLibrary *libray;
 
+/**  相册所有照片对象数组 */
 @property (strong, nonatomic) NSMutableArray * photo_model_array;
 
 @property (strong, nonatomic) YBPhotoThumbnailLayout *layout;
@@ -51,7 +52,6 @@
     [self prepareData];
     
     [self uiConfig];
-
 }
 
 
@@ -84,7 +84,6 @@
         self.done_button.enabled = YES;
         self.preview_buttom.enabled = YES;
     }
-    
 }
 
 
@@ -94,16 +93,7 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     
-    YBPhotoThumbnailLayout *layout = [[YBPhotoThumbnailLayout alloc]init];
-    
-    CGFloat item_width = ([UIScreen mainScreen].bounds.size.width - 25)/4.0;
-    
-    layout.itemSize = CGSizeMake(item_width , item_width);
-    layout.section_Spacing = 5;
-    layout.row_Spacing = 5;
-    self.photo_collectionView.collectionViewLayout = layout;
-    
-    self.layout = layout;
+    self.photo_collectionView.collectionViewLayout = self.layout;
     
     [self.photo_collectionView registerNib:[UINib nibWithNibName:@"YBPhotoThumbanilCell" bundle:nil] forCellWithReuseIdentifier:@"YBPhotoThumbanilCell"];
 }
@@ -121,7 +111,7 @@
 
 - (IBAction)previewAction:(id)sender {
     YBOriginalPhotoVC *originalPhotoVC = [[YBOriginalPhotoVC alloc]initWithNibName:@"YBOriginalPhotoVC" bundle:nil];
-    NSMutableArray *photo_model_array = [[NSMutableArray alloc]initWithArray:[YBPhotePickerManager sharedYBPhotePickerManager].photo_array];
+    NSMutableArray *photo_model_array = [[NSMutableArray alloc]initWithArray:[YBPhotePickerManager sharedYBPhotePickerManager].selected_photo_array];
     [photo_model_array sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         YBPhotoModel *model1 = (YBPhotoModel *)obj1;
         YBPhotoModel *model2 = (YBPhotoModel *)obj2;
@@ -149,7 +139,6 @@
         [self.photo_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.photo_model_array.count - 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
         self.isScrollToBottom = YES;
     }
-    
     return cell;
 }
 
@@ -185,28 +174,28 @@
 - (void)YBPhotoThumbanilCell:(YBPhotoThumbanilCell *)thumbanilCell didClickSelectedViewWithSelectedState:(BOOL)selected WithPhotoModel:(YBPhotoModel *)photoModel{
     NSLog(@"%@ 第%ld张", selected ?@"选中" :@"取消",photoModel.indexPath.row);
     [self changeSelectedState];
-    
 }
 
 
 
+
+#pragma mark - YBOriginalPhotoVCDelegate
+
+
+-(void)YBOriginalPhotoVC:(YBOriginalPhotoVC *)originalPhotoVC changePhotoSelectedStatewithIndexx:(int)index{
+    [self changeSelectedState];
+    
+    [self.photo_collectionView reloadData];
+}
+
+
+#pragma mark - Set and Get
 -(NSMutableArray *)photo_model_array{
     if (_photo_model_array == nil){
         _photo_model_array = [[NSMutableArray alloc]init];
         
-        self.libray = [[ALAssetsLibrary alloc] init];
-        
-        
         [self.libray enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-            
-            if (stop){
-                NSLog(@"STOP");
-            }else{
-                NSLog(@"CONTINUE");
-            }
-            
             if (group != nil) {
-                
                 //设置过滤对象
                 ALAssetsFilter *filter = [ALAssetsFilter allPhotos];
                 [group setAssetsFilter:filter];
@@ -221,6 +210,9 @@
                         [_photo_model_array addObject:photo_model];
                     }
                 }];
+                // 将所有获取的 照片模型 交给manager统一管理
+                [YBPhotePickerManager sharedYBPhotePickerManager].all_photo_array = _photo_model_array;
+                
                 [self.photo_collectionView reloadData];
                 
             }
@@ -228,23 +220,31 @@
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示",nil) message:NSLocalizedString(@"请允许访问相册,方可使用此功能!\n您可以在\"设置->隐私->照片\"中启用",nil) delegate:self cancelButtonTitle:NSLocalizedString(@"取消",nil) otherButtonTitles:NSLocalizedString(@"设置",nil), nil];
             [alertView show];
         }];
-        
-        
     }
-    
-    
     return _photo_model_array;
 }
 
-#pragma mark - YBOriginalPhotoVCDelegate
-
-
--(void)YBOriginalPhotoVC:(YBOriginalPhotoVC *)originalPhotoVC changePhotoSelectedStatewithIndexx:(int)index{
-    [self changeSelectedState];
-    
-    [self.photo_collectionView reloadData];
-    
+-(ALAssetsLibrary *)libray{
+    if (_libray == nil){
+        _libray = [[ALAssetsLibrary alloc] init];
+    }
+    return _libray;
 }
+
+
+-(YBPhotoThumbnailLayout *)layout{
+    if (_layout == nil){
+        _layout = [[YBPhotoThumbnailLayout alloc]init];
+        
+        CGFloat item_width = ([UIScreen mainScreen].bounds.size.width - 25)/4.0;
+        
+        _layout.itemSize = CGSizeMake(item_width , item_width);
+        _layout.section_Spacing = 5;
+        _layout.row_Spacing = 5;
+    }
+    return _layout;
+}
+
 
 
 

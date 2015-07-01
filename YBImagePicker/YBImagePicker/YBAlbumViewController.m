@@ -12,21 +12,20 @@
 
 @interface YBAlbumViewController ()<YBPhotoListViewControllerDelegate>
 
+@property (strong, nonatomic)  YBPhotoListViewController *photoListVC;
+
+
 @end
 
 @implementation YBAlbumViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self uiConfig];
     
-    
-    YBPhotoListViewController *photoListVC = [[YBPhotoListViewController alloc]initWithNibName:@"YBPhotoListViewController" bundle:nil];
-    photoListVC.delegate = self;
-    [self.navigationController pushViewController:photoListVC animated:NO];
-    
-    
+    [self.navigationController pushViewController:self.photoListVC animated:NO];
 }
 
 
@@ -42,7 +41,21 @@
     
 }
 
+#pragma mark - Set and Get 
+-(YBPhotoListViewController *)photoListVC{
+    if (_photoListVC == nil){
+        _photoListVC = [[YBPhotoListViewController alloc]initWithNibName:@"YBPhotoListViewController" bundle:nil];
+        _photoListVC.delegate = self;
+    }
+    return _photoListVC;
+}
 
+-(void)setShowList:(BOOL)showList{
+    _showList = showList;
+    if (_showList){
+        [self.navigationController pushViewController:self.photoListVC animated:NO];
+    }
+}
 
 #pragma mark - YBPhotoListViewControllerDelegate
 

@@ -10,4 +10,7 @@
 
 @interface YBAlbumViewController : UIViewController
 
+
+@property (assign, nonatomic) BOOL showList;
+
 @end

@@ -54,7 +54,6 @@
     _isSelectedImage = _photo_model.isSelected;
     
     _selected_imageView.isSelected = _photo_model.isSelected;
-    
 }
 
 - (void)tapSelected_imageView{

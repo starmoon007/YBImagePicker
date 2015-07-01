@@ -14,7 +14,13 @@
 
 @interface YBPhotePickerManager ()
 
-@property (strong, nonatomic) NSMutableArray * selected_photo_array;
+
+/** 选中照片模型数组 */
+@property (strong, nonatomic) NSMutableArray * selected_photo_model_array;
+
+
+
+
 
 
 @end
@@ -36,36 +42,40 @@ OMSingletonM(YBPhotePickerManager)
         return NO;
     }
     
-    [self.selected_photo_array addObject:photo_model];
+    [self.selected_photo_model_array addObject:photo_model];
     return YES;
 }
 
 
 - (BOOL)removePhoto:(YBPhotoModel *)photo_model{
-    [self.selected_photo_array removeObject:photo_model];
+    [self.selected_photo_model_array removeObject:photo_model];
     return YES;
 }
 
+
 - (void)removeAllPhotos{
-    [self.selected_photo_array removeAllObjects];
+    [self.selected_photo_model_array removeAllObjects];
+    self.all_photo_array = nil;
 }
+
+
+
+#pragma mark - Set and Get
 
 -(NSMutableArray *)selected_photo_array{
-    if (_selected_photo_array == nil){
-        _selected_photo_array = [[NSMutableArray alloc]init];
+    if (_selected_photo_model_array == nil){
+        _selected_photo_model_array = [[NSMutableArray alloc]init];
     }
     
-    return _selected_photo_array;
+    return _selected_photo_model_array;
 }
-
 
 -(NSInteger)selected_photo_count{
-    return self.selected_photo_array.count;
+    return self.selected_photo_model_array.count;
 }
 
-
 -(NSArray *)photo_array{
-    return self.selected_photo_array;
+    return self.selected_photo_model_array;
 }
 
 

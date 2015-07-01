@@ -12,6 +12,7 @@
 
 @protocol YBPhotoListViewControllerDelegate <NSObject>
 
+@optional
 - (void)didCancelwithYBPhotoListViewController:(YBPhotoListViewController *)photoListVC ;
 
 

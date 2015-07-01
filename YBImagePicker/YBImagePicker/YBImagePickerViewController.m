@@ -19,30 +19,33 @@
 
 @interface YBImagePickerViewController ()<UIAlertViewDelegate>
 
+@property (strong, nonatomic) YBAlbumViewController *albumView;
+
+
 @end
 
 @implementation YBImagePickerViewController
 
 
 -(void)dealloc{
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[YBPhotePickerManager sharedYBPhotePickerManager]removeAllPhotos];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    if ([[self.viewControllers lastObject] isKindOfClass:[YBAlbumViewController class]]){
+        self.
+        self.albumView.showList = YES;
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getSelectedPhotoArray:) name:GetSelectedPhotoArray object:nil];
-    
-    YBAlbumViewController *albumView = [[YBAlbumViewController alloc]initWithNibName:@"YBAlbumViewController" bundle:nil];
-    
-    [self pushViewController:albumView animated:NO];
+    [self pushViewController:self.albumView animated:NO];
 }
 
 
@@ -56,22 +59,24 @@
 }
 
 - (void)getSelectedPhotoArray:(NSNotification *)notif{
-    NSArray *selected_photo_array = [YBPhotePickerManager sharedYBPhotePickerManager].photo_array;
+    NSArray *selected_photo_array = [YBPhotePickerManager sharedYBPhotePickerManager].selected_photo_array;
     
     if ([self.photo_delegate respondsToSelector:@selector(YBImagePickerViewController:selectedPhotoArray:)]){
         [self.photo_delegate YBImagePickerViewController:self selectedPhotoArray:selected_photo_array];
-        
-        [[YBPhotePickerManager sharedYBPhotePickerManager] removeAllPhotos];
-        
-        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([[self.viewControllers lastObject] isKindOfClass:[YBOriginalPhotoVC class]]){
+        [self popViewControllerAnimated:YES];
     }
 }
+
+#pragma mark - Set and Get
 
 -(void)setMax_count:(int)max_count{
     _max_count = max_count;
     
     [[YBPhotePickerManager sharedYBPhotePickerManager] setMax_selectedPhoto_count:max_count];
-    
 }
 
 
@@ -79,7 +84,16 @@
     [super setDelegate:delegate];
     
     self.photo_delegate = delegate;
-    
 }
+
+-(YBAlbumViewController *)albumView{
+    if (_albumView == nil){
+        _albumView = [[YBAlbumViewController alloc]initWithNibName:@"YBAlbumViewController" bundle:nil];
+    }
+    return _albumView;
+}
+
+
+
 
 @end

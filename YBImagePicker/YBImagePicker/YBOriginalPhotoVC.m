@@ -50,16 +50,13 @@
     [self.photo_collectionView scrollToItemAtIndexPath:self.selected_indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO]; 
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    
-}
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
     self.navigationController.navigationBarHidden = NO;
-    
 }
+
 
 - (void)uiConfig{
     
@@ -74,12 +71,9 @@
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 0;
     
-    
     self.photo_collectionView.collectionViewLayout = layout;
     
-    
     [self.photo_collectionView registerNib:[UINib nibWithNibName:@"YBPhotoOriginalCell" bundle:nil] forCellWithReuseIdentifier:@"YBPhotoOriginalCell"];
-    
     
     self.number_label.text =[NSString stringWithFormat:@"%ld", [YBPhotePickerManager sharedYBPhotePickerManager].selected_photo_count] ;
     
@@ -94,7 +88,6 @@
     photo_model.isSelected = !photo_model.isSelected;
     
     if (photo_model.isSelected){
-        
         BOOL success = [[YBPhotePickerManager sharedYBPhotePickerManager] addPhoto:photo_model];
         
         if (success){
@@ -104,8 +97,6 @@
             photo_model.isSelected = !photo_model.isSelected;
             return ;
         }
-        
-        
     }else{
         [[YBPhotePickerManager sharedYBPhotePickerManager] removePhoto:photo_model];
         
@@ -115,10 +106,7 @@
     if ([self.delegate respondsToSelector:@selector(YBOriginalPhotoVC:changePhotoSelectedStatewithIndexx:)]){
         [self.delegate YBOriginalPhotoVC:self changePhotoSelectedStatewithIndexx:self.activiteCell_index];
     }
-    
     self.number_label.text =[NSString stringWithFormat:@"%ld", [YBPhotePickerManager sharedYBPhotePickerManager].selected_photo_count] ;
-    
-    
 }
 
 

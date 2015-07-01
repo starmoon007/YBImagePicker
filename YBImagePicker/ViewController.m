@@ -7,17 +7,30 @@
 //
 
 #import "ViewController.h"
+#import "UIView+Extension.h"
 
 #import "YBPhotoListViewController.h"
 
 #import "YBImagePickerViewController.h"
 
+#import "YBImgePickerView.h"
 
-@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,YBImagePickerViewControllerDelegate>
+
+@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,YBImagePickerViewControllerDelegate,YBImgePickerViewDelegate>
+
+@property (weak, nonatomic) YBImgePickerView *imagePickerView;
 
 @end
 
 @implementation ViewController
+
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    
+    self.imagePickerView;
+    
+}
 
 
 - (IBAction)openAlbum {
@@ -32,9 +45,6 @@
     [self pickImageWithType:UIImagePickerControllerSourceTypePhotoLibrary];
     
 }
-- (IBAction)CT:(id)sender {
-    
-}
 
 
 - (void)pickImageWithType:(UIImagePickerControllerSourceType)type{
@@ -44,18 +54,37 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
+-(YBImgePickerView *)imagePickerView{
+    if (_imagePickerView == nil){
+        YBImgePickerView *imagePickerView = [YBImgePickerView imagePickerView];
+        imagePickerView.width = self.view.width;
+        imagePickerView.height = 150;
+        imagePickerView.x = 0;
+        imagePickerView.y = 30;
+        imagePickerView.delegate = self;
+        [self.view addSubview:imagePickerView];
+        _imagePickerView = imagePickerView;
+    }
+    return _imagePickerView;
+}
+
+
 #pragma mark - YBImagePickerViewControllerDelegate
 
 - (void)YBImagePickerViewController:(YBImagePickerViewController *)imagePickerVC selectedPhotoArray:(NSArray *)selected_photo_array{
     
-    YBPhotoModel *model = [selected_photo_array firstObject];
+//    YBPhotoModel *model = [selected_photo_array firstObject];
+//    
+//    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 100, 100, 100)];
+//    UIImage *image = model.original_image;
+//    imageView.image = image;
+//    [self.view addSubview:imageView];
+//    
+//    imageView.backgroundColor = [UIColor redColor];
     
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 100, 100, 100)];
-    UIImage *image = model.original_image;
-    imageView.image = image;
-    [self.view addSubview:imageView];
+    NSMutableArray *selected_image_array = [[NSMutableArray alloc]initWithArray:selected_photo_array];
     
-    imageView.backgroundColor = [UIColor redColor];
+    self.imagePickerView.selected_image_array = selected_image_array;
     
     
 }
