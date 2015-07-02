@@ -8,7 +8,7 @@
 
 #import "YBPhotoListViewController.h"
 
-#import <AssetsLibrary/AssetsLibrary.h>
+
 
 #import "YBPhotoModel.h"
 
@@ -46,6 +46,10 @@
 
 @implementation YBPhotoListViewController
 
+-(void)dealloc{
+    NSLog(@"%s",__FUNCTION__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -57,6 +61,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.photo_collectionView reloadData];
+    
     [self changeSelectedState];
 }
 
@@ -78,10 +84,8 @@
     self.selectedPhotoNumber_label.text = [NSString stringWithFormat:@"%ld",selected_photo_count];
     
     if (selected_photo_count == 0){
-        self.done_button.enabled = NO;
         self.preview_buttom.enabled = NO;
     }else{
-        self.done_button.enabled = YES;
         self.preview_buttom.enabled = YES;
     }
 }
@@ -194,32 +198,49 @@
     if (_photo_model_array == nil){
         _photo_model_array = [[NSMutableArray alloc]init];
         
-        [self.libray enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-            if (group != nil) {
-                //设置过滤对象
-                ALAssetsFilter *filter = [ALAssetsFilter allPhotos];
-                [group setAssetsFilter:filter];
-                
-                //通过文件夹枚举遍历所有的相片ALAsset对象，有多少照片，则调用多少次block
-                [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
-                    if (result != nil) {
-                        //将result对象存储到数组中
-                        YBPhotoModel *photo_model = [[YBPhotoModel alloc]init];
-                        photo_model.url = result.defaultRepresentation.url;
-                        photo_model.isSelected = NO;
-                        [_photo_model_array addObject:photo_model];
-                    }
-                }];
-                // 将所有获取的 照片模型 交给manager统一管理
-                [YBPhotePickerManager sharedYBPhotePickerManager].all_photo_array = _photo_model_array;
-                
-                [self.photo_collectionView reloadData];
-                
-            }
-        } failureBlock:^(NSError *error) {
-            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示",nil) message:NSLocalizedString(@"请允许访问相册,方可使用此功能!\n您可以在\"设置->隐私->照片\"中启用",nil) delegate:self cancelButtonTitle:NSLocalizedString(@"取消",nil) otherButtonTitles:NSLocalizedString(@"设置",nil), nil];
-            [alertView show];
-        }];
+        if (self.showAll_photo){
+            [self.libray enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+                NSLog(@"%ld",(long)group.numberOfAssets);
+                if (group != nil) {
+                    
+                    //设置过滤对象
+                    ALAssetsFilter *filter = [ALAssetsFilter allPhotos];
+                    [group setAssetsFilter:filter];
+                    
+                    //通过文件夹枚举遍历所有的相片ALAsset对象，有多少照片，则调用多少次block
+                    [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+                        if (result != nil) {
+                            //将result对象存储到数组中
+                            YBPhotoModel *photo_model = [[YBPhotoModel alloc]init];
+                            photo_model.url = result.defaultRepresentation.url;
+                            photo_model.isSelected = NO;
+                            [_photo_model_array addObject:photo_model];
+                        }
+                    }];
+                    // 将所有获取的 照片模型 交给manager统一管理
+                    [YBPhotePickerManager sharedYBPhotePickerManager].all_photo_array = _photo_model_array;
+                    
+                    [self.photo_collectionView reloadData];
+                    
+                }
+            } failureBlock:^(NSError *error) {
+                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示",nil) message:NSLocalizedString(@"请允许访问相册,方可使用此功能!\n您可以在\"设置->隐私->照片\"中启用",nil) delegate:self cancelButtonTitle:NSLocalizedString(@"取消",nil) otherButtonTitles:NSLocalizedString(@"设置",nil), nil];
+                [alertView show];
+            }];
+            
+            self.showAll_photo = NO;
+        }else{
+            //通过文件夹枚举遍历所有的相片ALAsset对象，有多少照片，则调用多少次block
+            [self.assetsGroup enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+                if (result != nil) {
+                    //将result对象存储到数组中
+                    YBPhotoModel *photo_model = [[YBPhotoModel alloc]init];
+                    photo_model.url = result.defaultRepresentation.url;
+                    photo_model.isSelected = NO;
+                    [_photo_model_array addObject:photo_model];
+                }
+            }];
+        }
     }
     return _photo_model_array;
 }

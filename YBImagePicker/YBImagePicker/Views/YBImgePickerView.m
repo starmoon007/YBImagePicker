@@ -13,9 +13,11 @@
 
 #import "YBImagePickerViewController.h"
 
+#import "YBPhotePickerManager.h"
 
 
-@interface YBImgePickerView ()<UINavigationControllerDelegate,YBImagePickerViewControllerDelegate>
+
+@interface YBImgePickerView ()<UINavigationControllerDelegate,YBImagePickerViewControllerDelegate,YBImagePickerView_photoViewDelegate>
 
 
 
@@ -61,6 +63,7 @@
         YBPhotoModel *photo_model = nil;
         if (imageShowView_array.count <= i){// 照片控件数组中没有有视图控件 需要创建一个新的控件
             photoView = [YBImagePickerView_photoView photoView];
+            photoView.delegate = self;
             photo_model = self.selected_image_array[i];
             photoView.photo_model = photo_model;
             [self addSubview:photoView];
@@ -112,15 +115,70 @@
         UIViewController *vc = (UIViewController *)self.delegate;
         [vc presentViewController:self.pickerViewController animated:YES completion:nil];
     }
+    [self changePhotState:YBImagePickerView_photoView_StateNormal];
 }
 
 #pragma mark - YBImagePickerViewControllerDelegate
 
 - (void)YBImagePickerViewController:(YBImagePickerViewController *)imagePickerVC selectedPhotoArray:(NSArray *)selected_photo_array{
+    self.selected_image_array = [YBPhotePickerManager sharedYBPhotePickerManager].selected_photo_array;
+}
+
+#pragma mark - YBImagePickerView_photoViewDelegate
+
+- (void)imagePickerView_photoView:(YBImagePickerView_photoView *)photoView beganEditingWithPhotModel:(YBPhotoModel *)photo_model{
     
-    NSMutableArray *selected_image_array = [[NSMutableArray alloc]initWithArray:selected_photo_array];
+    [self changePhotState:YBImagePickerView_photoView_StateEditing];
+}
+
+- (void)imagePickerView_photoView:(YBImagePickerView_photoView *)photoView endEditingWithPhotModel:(YBPhotoModel *)photo_model{
     
-    self.selected_image_array = selected_image_array;
+    [self changePhotState:YBImagePickerView_photoView_StateNormal];
+}
+
+- (void)imagePickerView_photoView:(YBImagePickerView_photoView *)photoView deletedPhotoWithPhotModel:(YBPhotoModel *)photo_model{
+    
+    NSUInteger deleted_index = [self.selected_image_array indexOfObject:photo_model];
+    
+    
+    if (deleted_index < self.selected_image_array.count){
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            photoView.hidden = YES;
+            // 1.讲后面的照片前移
+            for (int i = (self.selected_image_array.count - 1); i > deleted_index; i--){
+                YBImagePickerView_photoView *photoView = self.imageShowView_array[i];
+                
+                YBImagePickerView_photoView *photoView_front = self.imageShowView_array[i - 1];
+                
+                photoView.frame = photoView_front.frame;
+            }
+            
+            
+        }completion:^(BOOL finished) {
+            // 2.将照片删除
+            [photoView removeFromSuperview];
+            [self.imageShowView_array removeObject:photoView];
+            [[YBPhotePickerManager sharedYBPhotePickerManager] removePhoto:photo_model];
+        }];
+    }
+    
+//    [self changePhotState:YBImagePickerView_photoView_StateNormal];
+}
+
+- (void)imagePickerView_photoView:(YBImagePickerView_photoView *)photoView didClickPhotoWithPhotModel:(YBPhotoModel *)photo_model{
+    
+}
+
+
+
+-(void)changePhotState:(YBImagePickerView_photoView_State )state{
+    
+    NSUInteger count = self.imageShowView_array.count;
+    for (int i=0; i<count; i++){
+        YBImagePickerView_photoView *photoView = self.imageShowView_array[i];
+        photoView.state = state;
+    }
 }
 
 
@@ -132,6 +190,7 @@
     
     [self setNeedsLayout];
 }
+
 
 
 -(NSUInteger)number_of_column{

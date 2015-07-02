@@ -74,7 +74,7 @@ OMSingletonM(YBPhotePickerManager)
     return self.selected_photo_model_array.count;
 }
 
--(NSArray *)photo_array{
+-(NSMutableArray *)photo_array{
     return self.selected_photo_model_array;
 }
 

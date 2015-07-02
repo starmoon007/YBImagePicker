@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,26 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aov-6C-kfv" userLabel="selected_imageView" customClass="YBSelected_imageView">
-                        <rect key="frame" x="25" y="0.0" width="25" height="25"/>
+                        <rect key="frame" x="23" y="2" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="jAI-BP-F0R"/>
                             <constraint firstAttribute="height" constant="25" id="zvU-AQ-F9M"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOi-ee-5Rw" userLabel="tap_view">
+                        <rect key="frame" x="25" y="0.0" width="22" height="25"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="qjc-xg-bMc" secondAttribute="trailing" id="20Q-wb-V0R"/>
-                <constraint firstItem="Aov-6C-kfv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BSf-0P-WcG"/>
-                <constraint firstAttribute="trailing" secondItem="Aov-6C-kfv" secondAttribute="trailing" id="Va9-3u-f6l"/>
+                <constraint firstAttribute="centerY" secondItem="NOi-ee-5Rw" secondAttribute="bottom" id="5vY-Fc-0RU"/>
+                <constraint firstItem="Aov-6C-kfv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="BSf-0P-WcG"/>
+                <constraint firstAttribute="trailing" secondItem="Aov-6C-kfv" secondAttribute="trailing" constant="2" id="Va9-3u-f6l"/>
+                <constraint firstItem="NOi-ee-5Rw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YDp-Ii-6is"/>
+                <constraint firstAttribute="trailing" secondItem="NOi-ee-5Rw" secondAttribute="trailing" constant="3" id="coX-QM-Pqu"/>
                 <constraint firstItem="qjc-xg-bMc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dJd-lx-qbE"/>
+                <constraint firstItem="NOi-ee-5Rw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="fE4-iN-rcE"/>
                 <constraint firstAttribute="bottom" secondItem="qjc-xg-bMc" secondAttribute="bottom" id="srI-I3-RJJ"/>
                 <constraint firstItem="qjc-xg-bMc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tOj-1N-eYM"/>
             </constraints>
             <connections>
                 <outlet property="photo_imageView" destination="qjc-xg-bMc" id="drU-al-YId"/>
                 <outlet property="selected_imageView" destination="Aov-6C-kfv" id="HpS-pN-cfw"/>
+                <outlet property="tap_view" destination="NOi-ee-5Rw" id="b08-nn-cvW"/>
             </connections>
             <point key="canvasLocation" x="166" y="298"/>
         </collectionViewCell>

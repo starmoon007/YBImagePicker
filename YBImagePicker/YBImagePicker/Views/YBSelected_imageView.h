@@ -12,4 +12,6 @@
 
 @property (assign, nonatomic) BOOL isSelected;
 
+- (void)setIsSelected:(BOOL)isSelected animate:(BOOL)animate;
+
 @end

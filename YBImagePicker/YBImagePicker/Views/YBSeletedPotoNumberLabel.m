@@ -41,7 +41,7 @@
     
     
     NSArray *duration_array = @[@(0.1),@(0.1),@(0.1),@(0.1),@(0.1)];
-    NSArray *scale_array = @[@(1.2),@(0.8),@(1.1),@(0.9),@(1.0)];
+    NSArray *scale_array = @[@(1.1),@(0.9),@(1.05),@(0.95),@(1.0)];
     self.layer.transform = CATransform3DMakeAffineTransform(CGAffineTransformMakeScale(0.01, 0.01));
     [UIView animateWithDuration_array:[NSMutableArray arrayWithArray:duration_array] withView:self withScale_array:[NSMutableArray arrayWithArray:scale_array]];
 }

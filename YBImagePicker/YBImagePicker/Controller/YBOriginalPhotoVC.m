@@ -189,12 +189,20 @@
     int index = offSetX / ((int)[UIScreen mainScreen].bounds.size.width);
     
     YBPhotoModel *photo_model = self.photo_model_array[index];
-    self.selected_imageView.isSelected = photo_model.isSelected;
+    [self.selected_imageView setIsSelected:photo_model.isSelected animate:NO];
     
     self.activiteCell_index = index;
     
 }
 
+#pragma mark - Set and Get 
+
+-(NSIndexPath *)selected_indexPath{
+    if (_selected_indexPath == nil){
+        _selected_indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    }
+    return _selected_indexPath;
+}
 
 
 

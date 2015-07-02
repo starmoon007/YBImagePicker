@@ -12,8 +12,6 @@
 
 #import "YBPhotePickerManager.h"
 
-#import "YBPhotePickerManager.h"
-
 #import <AVFoundation/AVFoundation.h>
 
 
@@ -61,13 +59,15 @@
 - (void)getSelectedPhotoArray:(NSNotification *)notif{
     NSArray *selected_photo_array = [YBPhotePickerManager sharedYBPhotePickerManager].selected_photo_array;
     
+    [self.albumView releaseSubViewController];
+    
     if ([self.photo_delegate respondsToSelector:@selector(YBImagePickerViewController:selectedPhotoArray:)]){
         [self.photo_delegate YBImagePickerViewController:self selectedPhotoArray:selected_photo_array];
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    if ([[self.viewControllers lastObject] isKindOfClass:[YBOriginalPhotoVC class]]){
-        [self popViewControllerAnimated:YES];
+    if (![[self.viewControllers lastObject] isKindOfClass:[YBAlbumViewController class]]){
+        [self popToRootViewControllerAnimated:YES];
     }
 }
 

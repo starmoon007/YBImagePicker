@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -35,8 +35,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfW-oN-ITX">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rL6-fh-cER">
-                            <rect key="frame" x="280" y="8" width="30" height="29"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rL6-fh-cER">
+                            <rect key="frame" x="260" y="0.0" width="50" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="DVW-fu-6cj"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="完成">
                                 <color key="titleColor" red="0.22352941176470589" green="0.58431372549019611" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,10 +61,10 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOw-uD-d4c" customClass="YBSeletedPotoNumberLabel">
-                            <rect key="frame" x="260" y="15" width="15" height="15"/>
+                            <rect key="frame" x="261" y="14" width="15" height="16"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="15" id="HJs-pA-84V"/>
-                                <constraint firstAttribute="height" constant="15" id="dVA-4v-JCt"/>
+                                <constraint firstAttribute="width" constant="15" id="GYi-jm-OYB"/>
+                                <constraint firstAttribute="height" constant="16" id="mcd-mh-67a"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,12 +74,13 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="centerY" secondItem="ETb-WQ-3Dx" secondAttribute="centerY" id="0rK-Tr-13x"/>
-                        <constraint firstAttribute="centerY" secondItem="uOw-uD-d4c" secondAttribute="centerY" id="1SX-Sy-YFe"/>
-                        <constraint firstAttribute="trailing" secondItem="rL6-fh-cER" secondAttribute="trailing" constant="10" id="5K5-Yt-Wga"/>
-                        <constraint firstAttribute="centerY" secondItem="rL6-fh-cER" secondAttribute="centerY" id="Dpg-oa-Ozh"/>
+                        <constraint firstAttribute="trailing" secondItem="uOw-uD-d4c" secondAttribute="trailing" constant="44" id="9ju-Rk-ccw"/>
+                        <constraint firstItem="rL6-fh-cER" firstAttribute="top" secondItem="xfW-oN-ITX" secondAttribute="top" id="Ftl-uJ-ZOx"/>
                         <constraint firstItem="ETb-WQ-3Dx" firstAttribute="leading" secondItem="xfW-oN-ITX" secondAttribute="leading" constant="10" id="V9Y-YB-G1e"/>
                         <constraint firstAttribute="height" constant="44" id="Zxk-Cf-DZV"/>
-                        <constraint firstItem="rL6-fh-cER" firstAttribute="leading" secondItem="uOw-uD-d4c" secondAttribute="trailing" constant="5" id="bsB-mj-BwM"/>
+                        <constraint firstAttribute="bottom" secondItem="rL6-fh-cER" secondAttribute="bottom" id="dBU-5Z-LFs"/>
+                        <constraint firstAttribute="trailing" secondItem="rL6-fh-cER" secondAttribute="trailing" constant="10" id="jX7-yz-cX8"/>
+                        <constraint firstAttribute="centerY" secondItem="uOw-uD-d4c" secondAttribute="centerY" id="nrW-f5-9HH"/>
                     </constraints>
                 </view>
             </subviews>

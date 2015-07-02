@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import <AssetsLibrary/AssetsLibrary.h>
+
 @class YBPhotoListViewController;
 
 @protocol YBPhotoListViewControllerDelegate <NSObject>
@@ -22,5 +24,10 @@
 @interface YBPhotoListViewController : UIViewController
 
 @property (weak, nonatomic) id <YBPhotoListViewControllerDelegate> delegate;
+
+@property (strong, nonatomic) ALAssetsGroup *assetsGroup ;
+
+@property (assign, nonatomic) BOOL showAll_photo;
+
 
 @end

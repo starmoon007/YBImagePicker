@@ -13,4 +13,7 @@
 
 @property (assign, nonatomic) BOOL showList;
 
+/** 是否掉 子控制器 减少内存消耗*/
+- (void)releaseSubViewController;
+
 @end

@@ -25,6 +25,9 @@
 
 @property (assign, nonatomic) BOOL isSelectedImage;
 
+@property (weak, nonatomic) IBOutlet UIView *tap_view;
+
+@property (strong, nonatomic) ALAssetsLibrary *assetLibrary;
 
 @end
 
@@ -38,11 +41,9 @@
 
 -(void)setPhoto_model:(YBPhotoModel *)photo_model{
     _photo_model = photo_model;
-    
-    
-    ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
+
     NSURL *url= _photo_model.url;
-    [assetLibrary assetForURL:url resultBlock:^(ALAsset *asset)  {
+    [self.assetLibrary assetForURL:url resultBlock:^(ALAsset *asset)  {
         
         self.photo_imageView.image = [UIImage imageWithCGImage:[asset thumbnail]];
         
@@ -53,7 +54,7 @@
     
     _isSelectedImage = _photo_model.isSelected;
     
-    _selected_imageView.isSelected = _photo_model.isSelected;
+    [_selected_imageView setIsSelected:_photo_model.isSelected animate:NO];
 }
 
 - (void)tapSelected_imageView{
@@ -87,7 +88,7 @@
     self.selected_imageView.isSelected = NO;
     
     
-    [self.selected_imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSelected_imageView)]];
+    [self.tap_view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSelected_imageView)]];
 }
 
 -(void)setIsSelectedImage:(BOOL)isSelectedImage{
@@ -95,6 +96,14 @@
     
     self.selected_imageView.isSelected = _isSelectedImage;
     self.photo_model.isSelected = _isSelectedImage;
+}
+
+
+-(ALAssetsLibrary *)assetLibrary{
+    if (_assetLibrary == nil){
+        _assetLibrary = [[ALAssetsLibrary alloc]init];
+    }
+    return _assetLibrary;
 }
 
 @end

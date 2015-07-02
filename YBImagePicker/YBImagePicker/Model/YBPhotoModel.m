@@ -34,21 +34,18 @@
         
         [assetLibrary assetForURL:url resultBlock:^(ALAsset *asset)  {
             
-            self.original_image = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
-            
-            self.thumbanil_image = [UIImage imageWithCGImage:[asset thumbnail]];
+//            self.original_image = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
+//            
+//            self.thumbanil_image = [UIImage imageWithCGImage:[asset thumbnail]];
             
         }failureBlock:^(NSError *error) {
             NSLog(@"error=%@",error);
         }];
         
     }else{
-        
         self.thumbanil_image = nil;
         self.original_image = nil;
-        
     }
-    
 }
 
 @end

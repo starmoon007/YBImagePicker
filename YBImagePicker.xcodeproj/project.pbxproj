@@ -17,21 +17,31 @@
 		D084AC911B42842A00861633 /* timeline_add_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = D084AC8E1B42842A00861633 /* timeline_add_photo.png */; };
 		D084AC921B42842A00861633 /* timeline_add_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D084AC8F1B42842A00861633 /* timeline_add_photo@2x.png */; };
 		D084AC931B42842A00861633 /* timeline_add_photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D084AC901B42842A00861633 /* timeline_add_photo@3x.png */; };
-		D0D27D3B1B0C2ABA0021F648 /* YBAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D231B0C2ABA0021F648 /* YBAlbumViewController.m */; };
-		D0D27D3C1B0C2ABB0021F648 /* YBAlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D241B0C2ABA0021F648 /* YBAlbumViewController.xib */; };
-		D0D27D3D1B0C2ABB0021F648 /* YBImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D261B0C2ABA0021F648 /* YBImagePickerViewController.m */; };
-		D0D27D3E1B0C2ABB0021F648 /* YBOriginalPhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D281B0C2ABA0021F648 /* YBOriginalPhotoVC.m */; };
-		D0D27D3F1B0C2ABB0021F648 /* YBOriginalPhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D291B0C2ABA0021F648 /* YBOriginalPhotoVC.xib */; };
-		D0D27D401B0C2ABB0021F648 /* YBPhotePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D2B1B0C2ABA0021F648 /* YBPhotePickerManager.m */; };
-		D0D27D411B0C2ABB0021F648 /* YBPhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D2D1B0C2ABA0021F648 /* YBPhotoListViewController.m */; };
-		D0D27D421B0C2ABB0021F648 /* YBPhotoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D2E1B0C2ABA0021F648 /* YBPhotoListViewController.xib */; };
-		D0D27D431B0C2ABB0021F648 /* YBPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D301B0C2ABA0021F648 /* YBPhotoModel.m */; };
-		D0D27D441B0C2ABB0021F648 /* YBPhotoOriginalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D321B0C2ABA0021F648 /* YBPhotoOriginalCell.m */; };
-		D0D27D451B0C2ABB0021F648 /* YBPhotoOriginalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D331B0C2ABA0021F648 /* YBPhotoOriginalCell.xib */; };
-		D0D27D461B0C2ABB0021F648 /* YBPhotoThumbanilCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D351B0C2ABA0021F648 /* YBPhotoThumbanilCell.m */; };
-		D0D27D471B0C2ABB0021F648 /* YBPhotoThumbanilCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D361B0C2ABA0021F648 /* YBPhotoThumbanilCell.xib */; };
-		D0D27D481B0C2ABB0021F648 /* YBPhotoThumbnailLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D381B0C2ABA0021F648 /* YBPhotoThumbnailLayout.m */; };
-		D0D27D491B0C2ABB0021F648 /* YBSeletedPotoNumberLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D27D3A1B0C2ABA0021F648 /* YBSeletedPotoNumberLabel.m */; };
+		D0A1D8041B44E02300736718 /* YBAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7DB1B44E02300736718 /* YBAlbumViewController.m */; };
+		D0A1D8051B44E02300736718 /* YBAlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1D7DC1B44E02300736718 /* YBAlbumViewController.xib */; };
+		D0A1D8061B44E02300736718 /* YBImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7DE1B44E02300736718 /* YBImagePickerViewController.m */; };
+		D0A1D8071B44E02300736718 /* YBOriginalPhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7E01B44E02300736718 /* YBOriginalPhotoVC.m */; };
+		D0A1D8081B44E02300736718 /* YBOriginalPhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1D7E11B44E02300736718 /* YBOriginalPhotoVC.xib */; };
+		D0A1D8091B44E02300736718 /* YBPhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7E31B44E02300736718 /* YBPhotoListViewController.m */; };
+		D0A1D80A1B44E02300736718 /* YBPhotoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1D7E41B44E02300736718 /* YBPhotoListViewController.xib */; };
+		D0A1D80B1B44E02300736718 /* YBPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7E71B44E02300736718 /* YBPhotoModel.m */; };
+		D0A1D80C1B44E02300736718 /* YBPhotoThumbnailLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7E91B44E02300736718 /* YBPhotoThumbnailLayout.m */; };
+		D0A1D80D1B44E02300736718 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7ED1B44E02300736718 /* UIView+Extension.m */; };
+		D0A1D80E1B44E02300736718 /* UIView+YBImagePickerAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7EF1B44E02300736718 /* UIView+YBImagePickerAnimation.m */; };
+		D0A1D80F1B44E02300736718 /* YBPhotePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7F11B44E02300736718 /* YBPhotePickerManager.m */; };
+		D0A1D8101B44E02300736718 /* YBAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7F41B44E02300736718 /* YBAlbumCell.m */; };
+		D0A1D8111B44E02300736718 /* YBAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1D7F51B44E02300736718 /* YBAlbumCell.xib */; };
+		D0A1D8121B44E02300736718 /* YBImagePickerView_photoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7F71B44E02300736718 /* YBImagePickerView_photoView.m */; };
+		D0A1D8131B44E02300736718 /* YBImgePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7F91B44E02300736718 /* YBImgePickerView.m */; };
+		D0A1D8141B44E02300736718 /* YBPhotoOriginalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7FB1B44E02300736718 /* YBPhotoOriginalCell.m */; };
+		D0A1D8151B44E02300736718 /* YBPhotoOriginalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1D7FC1B44E02300736718 /* YBPhotoOriginalCell.xib */; };
+		D0A1D8161B44E02300736718 /* YBPhotoThumbanilCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D7FE1B44E02300736718 /* YBPhotoThumbanilCell.m */; };
+		D0A1D8171B44E02300736718 /* YBPhotoThumbanilCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A1D7FF1B44E02300736718 /* YBPhotoThumbanilCell.xib */; };
+		D0A1D8181B44E02300736718 /* YBSelected_imageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D8011B44E02300736718 /* YBSelected_imageView.m */; };
+		D0A1D8191B44E02300736718 /* YBSeletedPotoNumberLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D8031B44E02300736718 /* YBSeletedPotoNumberLabel.m */; };
+		D0A1D81C1B4523A200736718 /* YBPhotoDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D81B1B4523A200736718 /* YBPhotoDeleteButton.m */; };
+		D0A1D81F1B45279600736718 /* remove_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D0A1D81D1B45279600736718 /* remove_icon.png */; };
+		D0A1D8201B45279600736718 /* remove_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0A1D81E1B45279600736718 /* remove_icon@2x.png */; };
 		D0D27D531B0C2B740021F648 /* icon_find_addshare.png in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D4B1B0C2B740021F648 /* icon_find_addshare.png */; };
 		D0D27D541B0C2B740021F648 /* icon_find_addshare@1.5x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D4C1B0C2B740021F648 /* icon_find_addshare@1.5x.png */; };
 		D0D27D551B0C2B740021F648 /* icon_find_addshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D4D1B0C2B740021F648 /* icon_find_addshare@2x.png */; };
@@ -40,11 +50,6 @@
 		D0D27D581B0C2B740021F648 /* icon_find_addshare_pitch@1.5x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D501B0C2B740021F648 /* icon_find_addshare_pitch@1.5x.png */; };
 		D0D27D591B0C2B740021F648 /* icon_find_addshare_pitch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D511B0C2B740021F648 /* icon_find_addshare_pitch@2x.png */; };
 		D0D27D5A1B0C2B740021F648 /* icon_find_addshare_pitch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0D27D521B0C2B740021F648 /* icon_find_addshare_pitch@3x.png */; };
-		D0E339DF1B0D81A600FFEACB /* UIView+YBImagePickerAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E339DE1B0D81A600FFEACB /* UIView+YBImagePickerAnimation.m */; };
-		D0E339E21B0D847D00FFEACB /* YBSelected_imageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E339E11B0D847D00FFEACB /* YBSelected_imageView.m */; };
-		D0F0273D1B3D398B0072127D /* YBImgePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F0273C1B3D398B0072127D /* YBImgePickerView.m */; };
-		D0F027401B3D3C020072127D /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F0273F1B3D3C020072127D /* UIView+Extension.m */; };
-		D0F027431B3D3F440072127D /* YBImagePickerView_photoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F027421B3D3F440072127D /* YBImagePickerView_photoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,32 +79,49 @@
 		D084AC8E1B42842A00861633 /* timeline_add_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline_add_photo.png; sourceTree = "<group>"; };
 		D084AC8F1B42842A00861633 /* timeline_add_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_add_photo@2x.png"; sourceTree = "<group>"; };
 		D084AC901B42842A00861633 /* timeline_add_photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_add_photo@3x.png"; sourceTree = "<group>"; };
-		D0D27D211B0C2ABA0021F648 /* OMSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMSingleton.h; sourceTree = "<group>"; };
-		D0D27D221B0C2ABA0021F648 /* YBAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAlbumViewController.h; sourceTree = "<group>"; };
-		D0D27D231B0C2ABA0021F648 /* YBAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAlbumViewController.m; sourceTree = "<group>"; };
-		D0D27D241B0C2ABA0021F648 /* YBAlbumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBAlbumViewController.xib; sourceTree = "<group>"; };
-		D0D27D251B0C2ABA0021F648 /* YBImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImagePickerViewController.h; sourceTree = "<group>"; };
-		D0D27D261B0C2ABA0021F648 /* YBImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImagePickerViewController.m; sourceTree = "<group>"; };
-		D0D27D271B0C2ABA0021F648 /* YBOriginalPhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBOriginalPhotoVC.h; sourceTree = "<group>"; };
-		D0D27D281B0C2ABA0021F648 /* YBOriginalPhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBOriginalPhotoVC.m; sourceTree = "<group>"; };
-		D0D27D291B0C2ABA0021F648 /* YBOriginalPhotoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBOriginalPhotoVC.xib; sourceTree = "<group>"; };
-		D0D27D2A1B0C2ABA0021F648 /* YBPhotePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotePickerManager.h; sourceTree = "<group>"; };
-		D0D27D2B1B0C2ABA0021F648 /* YBPhotePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotePickerManager.m; sourceTree = "<group>"; };
-		D0D27D2C1B0C2ABA0021F648 /* YBPhotoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoListViewController.h; sourceTree = "<group>"; };
-		D0D27D2D1B0C2ABA0021F648 /* YBPhotoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoListViewController.m; sourceTree = "<group>"; };
-		D0D27D2E1B0C2ABA0021F648 /* YBPhotoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBPhotoListViewController.xib; sourceTree = "<group>"; };
-		D0D27D2F1B0C2ABA0021F648 /* YBPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoModel.h; sourceTree = "<group>"; };
-		D0D27D301B0C2ABA0021F648 /* YBPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoModel.m; sourceTree = "<group>"; };
-		D0D27D311B0C2ABA0021F648 /* YBPhotoOriginalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoOriginalCell.h; sourceTree = "<group>"; };
-		D0D27D321B0C2ABA0021F648 /* YBPhotoOriginalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoOriginalCell.m; sourceTree = "<group>"; };
-		D0D27D331B0C2ABA0021F648 /* YBPhotoOriginalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBPhotoOriginalCell.xib; sourceTree = "<group>"; };
-		D0D27D341B0C2ABA0021F648 /* YBPhotoThumbanilCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoThumbanilCell.h; sourceTree = "<group>"; };
-		D0D27D351B0C2ABA0021F648 /* YBPhotoThumbanilCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoThumbanilCell.m; sourceTree = "<group>"; };
-		D0D27D361B0C2ABA0021F648 /* YBPhotoThumbanilCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBPhotoThumbanilCell.xib; sourceTree = "<group>"; };
-		D0D27D371B0C2ABA0021F648 /* YBPhotoThumbnailLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoThumbnailLayout.h; sourceTree = "<group>"; };
-		D0D27D381B0C2ABA0021F648 /* YBPhotoThumbnailLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoThumbnailLayout.m; sourceTree = "<group>"; };
-		D0D27D391B0C2ABA0021F648 /* YBSeletedPotoNumberLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSeletedPotoNumberLabel.h; sourceTree = "<group>"; };
-		D0D27D3A1B0C2ABA0021F648 /* YBSeletedPotoNumberLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSeletedPotoNumberLabel.m; sourceTree = "<group>"; };
+		D0A1D7DA1B44E02300736718 /* YBAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAlbumViewController.h; sourceTree = "<group>"; };
+		D0A1D7DB1B44E02300736718 /* YBAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAlbumViewController.m; sourceTree = "<group>"; };
+		D0A1D7DC1B44E02300736718 /* YBAlbumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBAlbumViewController.xib; sourceTree = "<group>"; };
+		D0A1D7DD1B44E02300736718 /* YBImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImagePickerViewController.h; sourceTree = "<group>"; };
+		D0A1D7DE1B44E02300736718 /* YBImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImagePickerViewController.m; sourceTree = "<group>"; };
+		D0A1D7DF1B44E02300736718 /* YBOriginalPhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBOriginalPhotoVC.h; sourceTree = "<group>"; };
+		D0A1D7E01B44E02300736718 /* YBOriginalPhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBOriginalPhotoVC.m; sourceTree = "<group>"; };
+		D0A1D7E11B44E02300736718 /* YBOriginalPhotoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBOriginalPhotoVC.xib; sourceTree = "<group>"; };
+		D0A1D7E21B44E02300736718 /* YBPhotoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoListViewController.h; sourceTree = "<group>"; };
+		D0A1D7E31B44E02300736718 /* YBPhotoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoListViewController.m; sourceTree = "<group>"; };
+		D0A1D7E41B44E02300736718 /* YBPhotoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBPhotoListViewController.xib; sourceTree = "<group>"; };
+		D0A1D7E61B44E02300736718 /* YBPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoModel.h; sourceTree = "<group>"; };
+		D0A1D7E71B44E02300736718 /* YBPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoModel.m; sourceTree = "<group>"; };
+		D0A1D7E81B44E02300736718 /* YBPhotoThumbnailLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoThumbnailLayout.h; sourceTree = "<group>"; };
+		D0A1D7E91B44E02300736718 /* YBPhotoThumbnailLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoThumbnailLayout.m; sourceTree = "<group>"; };
+		D0A1D7EB1B44E02300736718 /* OMSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMSingleton.h; sourceTree = "<group>"; };
+		D0A1D7EC1B44E02300736718 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		D0A1D7ED1B44E02300736718 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		D0A1D7EE1B44E02300736718 /* UIView+YBImagePickerAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YBImagePickerAnimation.h"; sourceTree = "<group>"; };
+		D0A1D7EF1B44E02300736718 /* UIView+YBImagePickerAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YBImagePickerAnimation.m"; sourceTree = "<group>"; };
+		D0A1D7F01B44E02300736718 /* YBPhotePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotePickerManager.h; sourceTree = "<group>"; };
+		D0A1D7F11B44E02300736718 /* YBPhotePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotePickerManager.m; sourceTree = "<group>"; };
+		D0A1D7F31B44E02300736718 /* YBAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAlbumCell.h; sourceTree = "<group>"; };
+		D0A1D7F41B44E02300736718 /* YBAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAlbumCell.m; sourceTree = "<group>"; };
+		D0A1D7F51B44E02300736718 /* YBAlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBAlbumCell.xib; sourceTree = "<group>"; };
+		D0A1D7F61B44E02300736718 /* YBImagePickerView_photoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImagePickerView_photoView.h; sourceTree = "<group>"; };
+		D0A1D7F71B44E02300736718 /* YBImagePickerView_photoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImagePickerView_photoView.m; sourceTree = "<group>"; };
+		D0A1D7F81B44E02300736718 /* YBImgePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImgePickerView.h; sourceTree = "<group>"; };
+		D0A1D7F91B44E02300736718 /* YBImgePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImgePickerView.m; sourceTree = "<group>"; };
+		D0A1D7FA1B44E02300736718 /* YBPhotoOriginalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoOriginalCell.h; sourceTree = "<group>"; };
+		D0A1D7FB1B44E02300736718 /* YBPhotoOriginalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoOriginalCell.m; sourceTree = "<group>"; };
+		D0A1D7FC1B44E02300736718 /* YBPhotoOriginalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBPhotoOriginalCell.xib; sourceTree = "<group>"; };
+		D0A1D7FD1B44E02300736718 /* YBPhotoThumbanilCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoThumbanilCell.h; sourceTree = "<group>"; };
+		D0A1D7FE1B44E02300736718 /* YBPhotoThumbanilCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoThumbanilCell.m; sourceTree = "<group>"; };
+		D0A1D7FF1B44E02300736718 /* YBPhotoThumbanilCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBPhotoThumbanilCell.xib; sourceTree = "<group>"; };
+		D0A1D8001B44E02300736718 /* YBSelected_imageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSelected_imageView.h; sourceTree = "<group>"; };
+		D0A1D8011B44E02300736718 /* YBSelected_imageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSelected_imageView.m; sourceTree = "<group>"; };
+		D0A1D8021B44E02300736718 /* YBSeletedPotoNumberLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSeletedPotoNumberLabel.h; sourceTree = "<group>"; };
+		D0A1D8031B44E02300736718 /* YBSeletedPotoNumberLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSeletedPotoNumberLabel.m; sourceTree = "<group>"; };
+		D0A1D81A1B4523A200736718 /* YBPhotoDeleteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoDeleteButton.h; sourceTree = "<group>"; };
+		D0A1D81B1B4523A200736718 /* YBPhotoDeleteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoDeleteButton.m; sourceTree = "<group>"; };
+		D0A1D81D1B45279600736718 /* remove_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove_icon.png; sourceTree = "<group>"; };
+		D0A1D81E1B45279600736718 /* remove_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remove_icon@2x.png"; sourceTree = "<group>"; };
 		D0D27D4B1B0C2B740021F648 /* icon_find_addshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_find_addshare.png; sourceTree = "<group>"; };
 		D0D27D4C1B0C2B740021F648 /* icon_find_addshare@1.5x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_find_addshare@1.5x.png"; sourceTree = "<group>"; };
 		D0D27D4D1B0C2B740021F648 /* icon_find_addshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_find_addshare@2x.png"; sourceTree = "<group>"; };
@@ -108,16 +130,6 @@
 		D0D27D501B0C2B740021F648 /* icon_find_addshare_pitch@1.5x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_find_addshare_pitch@1.5x.png"; sourceTree = "<group>"; };
 		D0D27D511B0C2B740021F648 /* icon_find_addshare_pitch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_find_addshare_pitch@2x.png"; sourceTree = "<group>"; };
 		D0D27D521B0C2B740021F648 /* icon_find_addshare_pitch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_find_addshare_pitch@3x.png"; sourceTree = "<group>"; };
-		D0E339DD1B0D81A600FFEACB /* UIView+YBImagePickerAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YBImagePickerAnimation.h"; sourceTree = "<group>"; };
-		D0E339DE1B0D81A600FFEACB /* UIView+YBImagePickerAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YBImagePickerAnimation.m"; sourceTree = "<group>"; };
-		D0E339E01B0D847D00FFEACB /* YBSelected_imageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBSelected_imageView.h; sourceTree = "<group>"; };
-		D0E339E11B0D847D00FFEACB /* YBSelected_imageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBSelected_imageView.m; sourceTree = "<group>"; };
-		D0F0273B1B3D398B0072127D /* YBImgePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImgePickerView.h; sourceTree = "<group>"; };
-		D0F0273C1B3D398B0072127D /* YBImgePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImgePickerView.m; sourceTree = "<group>"; };
-		D0F0273E1B3D3C020072127D /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		D0F0273F1B3D3C020072127D /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		D0F027411B3D3F440072127D /* YBImagePickerView_photoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImagePickerView_photoView.h; sourceTree = "<group>"; };
-		D0F027421B3D3F440072127D /* YBImagePickerView_photoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImagePickerView_photoView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,46 +210,83 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D0A1D7D91B44E02300736718 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D0A1D7DA1B44E02300736718 /* YBAlbumViewController.h */,
+				D0A1D7DB1B44E02300736718 /* YBAlbumViewController.m */,
+				D0A1D7DC1B44E02300736718 /* YBAlbumViewController.xib */,
+				D0A1D7DD1B44E02300736718 /* YBImagePickerViewController.h */,
+				D0A1D7DE1B44E02300736718 /* YBImagePickerViewController.m */,
+				D0A1D7DF1B44E02300736718 /* YBOriginalPhotoVC.h */,
+				D0A1D7E01B44E02300736718 /* YBOriginalPhotoVC.m */,
+				D0A1D7E11B44E02300736718 /* YBOriginalPhotoVC.xib */,
+				D0A1D7E21B44E02300736718 /* YBPhotoListViewController.h */,
+				D0A1D7E31B44E02300736718 /* YBPhotoListViewController.m */,
+				D0A1D7E41B44E02300736718 /* YBPhotoListViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D0A1D7E51B44E02300736718 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0A1D7E61B44E02300736718 /* YBPhotoModel.h */,
+				D0A1D7E71B44E02300736718 /* YBPhotoModel.m */,
+				D0A1D7E81B44E02300736718 /* YBPhotoThumbnailLayout.h */,
+				D0A1D7E91B44E02300736718 /* YBPhotoThumbnailLayout.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0A1D7EA1B44E02300736718 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D0A1D7EB1B44E02300736718 /* OMSingleton.h */,
+				D0A1D7EC1B44E02300736718 /* UIView+Extension.h */,
+				D0A1D7ED1B44E02300736718 /* UIView+Extension.m */,
+				D0A1D7EE1B44E02300736718 /* UIView+YBImagePickerAnimation.h */,
+				D0A1D7EF1B44E02300736718 /* UIView+YBImagePickerAnimation.m */,
+				D0A1D7F01B44E02300736718 /* YBPhotePickerManager.h */,
+				D0A1D7F11B44E02300736718 /* YBPhotePickerManager.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		D0A1D7F21B44E02300736718 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0A1D7F31B44E02300736718 /* YBAlbumCell.h */,
+				D0A1D7F41B44E02300736718 /* YBAlbumCell.m */,
+				D0A1D7F51B44E02300736718 /* YBAlbumCell.xib */,
+				D0A1D7F61B44E02300736718 /* YBImagePickerView_photoView.h */,
+				D0A1D7F71B44E02300736718 /* YBImagePickerView_photoView.m */,
+				D0A1D7F81B44E02300736718 /* YBImgePickerView.h */,
+				D0A1D7F91B44E02300736718 /* YBImgePickerView.m */,
+				D0A1D7FA1B44E02300736718 /* YBPhotoOriginalCell.h */,
+				D0A1D7FB1B44E02300736718 /* YBPhotoOriginalCell.m */,
+				D0A1D7FC1B44E02300736718 /* YBPhotoOriginalCell.xib */,
+				D0A1D7FD1B44E02300736718 /* YBPhotoThumbanilCell.h */,
+				D0A1D7FE1B44E02300736718 /* YBPhotoThumbanilCell.m */,
+				D0A1D7FF1B44E02300736718 /* YBPhotoThumbanilCell.xib */,
+				D0A1D8001B44E02300736718 /* YBSelected_imageView.h */,
+				D0A1D8011B44E02300736718 /* YBSelected_imageView.m */,
+				D0A1D8021B44E02300736718 /* YBSeletedPotoNumberLabel.h */,
+				D0A1D8031B44E02300736718 /* YBSeletedPotoNumberLabel.m */,
+				D0A1D81A1B4523A200736718 /* YBPhotoDeleteButton.h */,
+				D0A1D81B1B4523A200736718 /* YBPhotoDeleteButton.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D0D27D201B0C2ABA0021F648 /* YBImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				D0F0273E1B3D3C020072127D /* UIView+Extension.h */,
-				D0F0273F1B3D3C020072127D /* UIView+Extension.m */,
+				D0A1D7D91B44E02300736718 /* Controller */,
+				D0A1D7E51B44E02300736718 /* Model */,
+				D0A1D7EA1B44E02300736718 /* Other */,
+				D0A1D7F21B44E02300736718 /* Views */,
 				D0D27D4A1B0C2B740021F648 /* YBImagePicker_image */,
-				D0D27D211B0C2ABA0021F648 /* OMSingleton.h */,
-				D0D27D221B0C2ABA0021F648 /* YBAlbumViewController.h */,
-				D0D27D231B0C2ABA0021F648 /* YBAlbumViewController.m */,
-				D0D27D241B0C2ABA0021F648 /* YBAlbumViewController.xib */,
-				D0D27D251B0C2ABA0021F648 /* YBImagePickerViewController.h */,
-				D0D27D261B0C2ABA0021F648 /* YBImagePickerViewController.m */,
-				D0D27D271B0C2ABA0021F648 /* YBOriginalPhotoVC.h */,
-				D0D27D281B0C2ABA0021F648 /* YBOriginalPhotoVC.m */,
-				D0D27D291B0C2ABA0021F648 /* YBOriginalPhotoVC.xib */,
-				D0D27D2A1B0C2ABA0021F648 /* YBPhotePickerManager.h */,
-				D0D27D2B1B0C2ABA0021F648 /* YBPhotePickerManager.m */,
-				D0D27D2C1B0C2ABA0021F648 /* YBPhotoListViewController.h */,
-				D0D27D2D1B0C2ABA0021F648 /* YBPhotoListViewController.m */,
-				D0D27D2E1B0C2ABA0021F648 /* YBPhotoListViewController.xib */,
-				D0D27D2F1B0C2ABA0021F648 /* YBPhotoModel.h */,
-				D0D27D301B0C2ABA0021F648 /* YBPhotoModel.m */,
-				D0D27D311B0C2ABA0021F648 /* YBPhotoOriginalCell.h */,
-				D0D27D321B0C2ABA0021F648 /* YBPhotoOriginalCell.m */,
-				D0D27D331B0C2ABA0021F648 /* YBPhotoOriginalCell.xib */,
-				D0D27D341B0C2ABA0021F648 /* YBPhotoThumbanilCell.h */,
-				D0D27D351B0C2ABA0021F648 /* YBPhotoThumbanilCell.m */,
-				D0D27D361B0C2ABA0021F648 /* YBPhotoThumbanilCell.xib */,
-				D0D27D371B0C2ABA0021F648 /* YBPhotoThumbnailLayout.h */,
-				D0D27D381B0C2ABA0021F648 /* YBPhotoThumbnailLayout.m */,
-				D0D27D391B0C2ABA0021F648 /* YBSeletedPotoNumberLabel.h */,
-				D0D27D3A1B0C2ABA0021F648 /* YBSeletedPotoNumberLabel.m */,
-				D0E339DD1B0D81A600FFEACB /* UIView+YBImagePickerAnimation.h */,
-				D0E339DE1B0D81A600FFEACB /* UIView+YBImagePickerAnimation.m */,
-				D0E339E01B0D847D00FFEACB /* YBSelected_imageView.h */,
-				D0E339E11B0D847D00FFEACB /* YBSelected_imageView.m */,
-				D0F0273B1B3D398B0072127D /* YBImgePickerView.h */,
-				D0F0273C1B3D398B0072127D /* YBImgePickerView.m */,
-				D0F027411B3D3F440072127D /* YBImagePickerView_photoView.h */,
-				D0F027421B3D3F440072127D /* YBImagePickerView_photoView.m */,
 			);
 			path = YBImagePicker;
 			sourceTree = "<group>";
@@ -245,6 +294,8 @@
 		D0D27D4A1B0C2B740021F648 /* YBImagePicker_image */ = {
 			isa = PBXGroup;
 			children = (
+				D0A1D81D1B45279600736718 /* remove_icon.png */,
+				D0A1D81E1B45279600736718 /* remove_icon@2x.png */,
 				D084AC8E1B42842A00861633 /* timeline_add_photo.png */,
 				D084AC8F1B42842A00861633 /* timeline_add_photo@2x.png */,
 				D084AC901B42842A00861633 /* timeline_add_photo@3x.png */,
@@ -340,22 +391,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A1D8111B44E02300736718 /* YBAlbumCell.xib in Resources */,
+				D0A1D8151B44E02300736718 /* YBPhotoOriginalCell.xib in Resources */,
 				D01109551B0598EE00DAE335 /* Main.storyboard in Resources */,
-				D0D27D3F1B0C2ABB0021F648 /* YBOriginalPhotoVC.xib in Resources */,
 				D084AC921B42842A00861633 /* timeline_add_photo@2x.png in Resources */,
 				D0D27D541B0C2B740021F648 /* icon_find_addshare@1.5x.png in Resources */,
-				D0D27D471B0C2ABB0021F648 /* YBPhotoThumbanilCell.xib in Resources */,
+				D0A1D81F1B45279600736718 /* remove_icon.png in Resources */,
+				D0A1D80A1B44E02300736718 /* YBPhotoListViewController.xib in Resources */,
+				D0A1D8201B45279600736718 /* remove_icon@2x.png in Resources */,
 				D0D27D571B0C2B740021F648 /* icon_find_addshare_pitch.png in Resources */,
 				D0D27D531B0C2B740021F648 /* icon_find_addshare.png in Resources */,
 				D0D27D591B0C2B740021F648 /* icon_find_addshare_pitch@2x.png in Resources */,
 				D0D27D551B0C2B740021F648 /* icon_find_addshare@2x.png in Resources */,
+				D0A1D8171B44E02300736718 /* YBPhotoThumbanilCell.xib in Resources */,
 				D0D27D5A1B0C2B740021F648 /* icon_find_addshare_pitch@3x.png in Resources */,
-				D0D27D451B0C2ABB0021F648 /* YBPhotoOriginalCell.xib in Resources */,
 				D084AC911B42842A00861633 /* timeline_add_photo.png in Resources */,
-				D0D27D3C1B0C2ABB0021F648 /* YBAlbumViewController.xib in Resources */,
+				D0A1D8081B44E02300736718 /* YBOriginalPhotoVC.xib in Resources */,
+				D0A1D8051B44E02300736718 /* YBAlbumViewController.xib in Resources */,
 				D0D27D581B0C2B740021F648 /* icon_find_addshare_pitch@1.5x.png in Resources */,
 				D011095A1B0598EE00DAE335 /* LaunchScreen.xib in Resources */,
-				D0D27D421B0C2ABB0021F648 /* YBPhotoListViewController.xib in Resources */,
 				D01109571B0598EE00DAE335 /* Images.xcassets in Resources */,
 				D0D27D561B0C2B740021F648 /* icon_find_addshare@3x.png in Resources */,
 				D084AC931B42842A00861633 /* timeline_add_photo@3x.png in Resources */,
@@ -376,24 +430,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0D27D3D1B0C2ABB0021F648 /* YBImagePickerViewController.m in Sources */,
-				D0D27D491B0C2ABB0021F648 /* YBSeletedPotoNumberLabel.m in Sources */,
+				D0A1D80D1B44E02300736718 /* UIView+Extension.m in Sources */,
+				D0A1D8091B44E02300736718 /* YBPhotoListViewController.m in Sources */,
+				D0A1D80C1B44E02300736718 /* YBPhotoThumbnailLayout.m in Sources */,
+				D0A1D8131B44E02300736718 /* YBImgePickerView.m in Sources */,
+				D0A1D8061B44E02300736718 /* YBImagePickerViewController.m in Sources */,
 				D01109521B0598EE00DAE335 /* ViewController.m in Sources */,
-				D0D27D3B1B0C2ABA0021F648 /* YBAlbumViewController.m in Sources */,
-				D0E339E21B0D847D00FFEACB /* YBSelected_imageView.m in Sources */,
-				D0F027401B3D3C020072127D /* UIView+Extension.m in Sources */,
-				D0D27D401B0C2ABB0021F648 /* YBPhotePickerManager.m in Sources */,
-				D0D27D3E1B0C2ABB0021F648 /* YBOriginalPhotoVC.m in Sources */,
+				D0A1D80F1B44E02300736718 /* YBPhotePickerManager.m in Sources */,
+				D0A1D8101B44E02300736718 /* YBAlbumCell.m in Sources */,
+				D0A1D8121B44E02300736718 /* YBImagePickerView_photoView.m in Sources */,
+				D0A1D8041B44E02300736718 /* YBAlbumViewController.m in Sources */,
+				D0A1D8181B44E02300736718 /* YBSelected_imageView.m in Sources */,
+				D0A1D8141B44E02300736718 /* YBPhotoOriginalCell.m in Sources */,
+				D0A1D8191B44E02300736718 /* YBSeletedPotoNumberLabel.m in Sources */,
+				D0A1D8071B44E02300736718 /* YBOriginalPhotoVC.m in Sources */,
 				D011094F1B0598EE00DAE335 /* AppDelegate.m in Sources */,
-				D0D27D411B0C2ABB0021F648 /* YBPhotoListViewController.m in Sources */,
-				D0D27D431B0C2ABB0021F648 /* YBPhotoModel.m in Sources */,
-				D0F0273D1B3D398B0072127D /* YBImgePickerView.m in Sources */,
-				D0D27D441B0C2ABB0021F648 /* YBPhotoOriginalCell.m in Sources */,
+				D0A1D8161B44E02300736718 /* YBPhotoThumbanilCell.m in Sources */,
+				D0A1D81C1B4523A200736718 /* YBPhotoDeleteButton.m in Sources */,
 				D011094C1B0598EE00DAE335 /* main.m in Sources */,
-				D0D27D481B0C2ABB0021F648 /* YBPhotoThumbnailLayout.m in Sources */,
-				D0E339DF1B0D81A600FFEACB /* UIView+YBImagePickerAnimation.m in Sources */,
-				D0D27D461B0C2ABB0021F648 /* YBPhotoThumbanilCell.m in Sources */,
-				D0F027431B3D3F440072127D /* YBImagePickerView_photoView.m in Sources */,
+				D0A1D80E1B44E02300736718 /* UIView+YBImagePickerAnimation.m in Sources */,
+				D0A1D80B1B44E02300736718 /* YBPhotoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,11 +571,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: yang bin (JF5XG2S7BZ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: yang bin (V6Z7CDNF2P)";
 				INFOPLIST_FILE = YBImagePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f2b5af89-a91f-44f6-bb6a-6548a3f75e32";
+				PROVISIONING_PROFILE = "5a2019bd-6a12-4166-a0b3-dbe01baa8a88";
 			};
 			name = Debug;
 		};
@@ -527,11 +583,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: yang bin (JF5XG2S7BZ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: yang bin (V6Z7CDNF2P)";
 				INFOPLIST_FILE = YBImagePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f2b5af89-a91f-44f6-bb6a-6548a3f75e32";
+				PROVISIONING_PROFILE = "5a2019bd-6a12-4166-a0b3-dbe01baa8a88";
 			};
 			name = Release;
 		};
