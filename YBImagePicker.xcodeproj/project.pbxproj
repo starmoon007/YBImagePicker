@@ -575,7 +575,7 @@
 				INFOPLIST_FILE = YBImagePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5a2019bd-6a12-4166-a0b3-dbe01baa8a88";
+				PROVISIONING_PROFILE = "a7bc0baa-e840-4331-af16-f1d253616f99";
 			};
 			name = Debug;
 		};
@@ -587,7 +587,7 @@
 				INFOPLIST_FILE = YBImagePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5a2019bd-6a12-4166-a0b3-dbe01baa8a88";
+				PROVISIONING_PROFILE = "a7bc0baa-e840-4331-af16-f1d253616f99";
 			};
 			name = Release;
 		};
