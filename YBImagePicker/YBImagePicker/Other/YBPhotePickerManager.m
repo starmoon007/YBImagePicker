@@ -59,6 +59,10 @@ OMSingletonM(YBPhotePickerManager)
 }
 
 
+- (void)removePhotoArray:(NSArray *)photo_array{
+    [self.selected_photo_model_array removeObjectsInArray:photo_array];
+}
+
 
 #pragma mark - Set and Get
 

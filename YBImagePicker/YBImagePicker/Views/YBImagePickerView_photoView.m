@@ -64,20 +64,15 @@
 
 /** 点击图片 */
 - (void)tapAction:(UITapGestureRecognizer *)tap{
-    NSLog(@"%s",__FUNCTION__);
-    
     if (self.state == YBImagePickerView_photoView_StateEditing && [self.delegate respondsToSelector:@selector(imagePickerView_photoView:endEditingWithPhotModel:)]){
         [self.delegate imagePickerView_photoView:self endEditingWithPhotModel:self.photo_model];
-    }else if ([self.delegate respondsToSelector:@selector(imagePickerView_photoView:didClickPhotoWithPhotModel:)]){
+    }else if (self.state == YBImagePickerView_photoView_StateNormal && [self.delegate respondsToSelector:@selector(imagePickerView_photoView:didClickPhotoWithPhotModel:)]){
         [self.delegate imagePickerView_photoView:self didClickPhotoWithPhotModel:self.photo_model];
     }
 }
 
 /** 删除 */
 - (void)deleteAction:(UIButton *)del_button{
-    NSLog(@"%s",__FUNCTION__);
-    
-    
     if (self.state == YBImagePickerView_photoView_StateEditing && [self.delegate respondsToSelector:@selector(imagePickerView_photoView:deletedPhotoWithPhotModel:)]){
         [self.delegate imagePickerView_photoView:self deletedPhotoWithPhotModel:self.photo_model];
     }

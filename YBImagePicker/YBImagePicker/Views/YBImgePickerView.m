@@ -12,12 +12,13 @@
 #import "YBImagePickerView_photoView.h"
 
 #import "YBImagePickerViewController.h"
+#import "YBOriginalPhotoVC.h"
 
 #import "YBPhotePickerManager.h"
 
 
 
-@interface YBImgePickerView ()<UINavigationControllerDelegate,YBImagePickerViewControllerDelegate,YBImagePickerView_photoViewDelegate>
+@interface YBImgePickerView ()<UINavigationControllerDelegate,YBImagePickerViewControllerDelegate,YBImagePickerView_photoViewDelegate,YBOriginalPhotoVCDelegate>
 
 
 
@@ -167,7 +168,23 @@
 }
 
 - (void)imagePickerView_photoView:(YBImagePickerView_photoView *)photoView didClickPhotoWithPhotModel:(YBPhotoModel *)photo_model{
-    
+    //1. 预览页面
+    if ([self.delegate isKindOfClass:[UIViewController class]]){
+        NSUInteger index = [self.selected_image_array indexOfObject:photo_model];
+        YBOriginalPhotoVC *originalPhotoVC = [[YBOriginalPhotoVC alloc]initWithNibName:@"YBOriginalPhotoVC" bundle:nil];
+        originalPhotoVC.mode = YBOriginalPhotoVCMode_Deleted;
+        originalPhotoVC.photo_model_array = self.selected_image_array;
+        originalPhotoVC.selected_indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        originalPhotoVC.delegate = self;
+        UIViewController *vc = (UIViewController *)self.delegate;
+        if (vc.navigationController == nil){
+            UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:originalPhotoVC];
+            [vc presentViewController:navi animated:YES completion:nil];
+        }else{
+           [vc.navigationController pushViewController:originalPhotoVC animated:YES];
+        }
+        
+    }
 }
 
 
@@ -179,6 +196,14 @@
         YBImagePickerView_photoView *photoView = self.imageShowView_array[i];
         photoView.state = state;
     }
+}
+
+#pragma mark - YBOriginalPhotoVCDelegate
+
+- (void)originalPhotoVC:(YBOriginalPhotoVC *)originalPhotoVC deletedSeletedPhotoWithPhotModel:(YBPhotoModel *)photo_model{
+    
+    self.selected_image_array = [YBPhotePickerManager sharedYBPhotePickerManager].selected_photo_array;
+    
 }
 
 

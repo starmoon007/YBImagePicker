@@ -39,5 +39,7 @@ OMSingletonH(YBPhotePickerManager)
 
 - (void)removeAllPhotos;
 
+- (void)removePhotoArray:(NSArray *)photo_array;
+
 
 @end

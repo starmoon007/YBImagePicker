@@ -12,7 +12,8 @@
 
 @protocol YBPhotoOriginalCellDelegate <NSObject>
 
-
+@optional
+- (void)photoOriginalCell:(YBPhotoOriginalCell *)photoOriginalCell didClickPhotoWithPhotoModel:(YBPhotoModel *)photo_model;
 
 @end
 

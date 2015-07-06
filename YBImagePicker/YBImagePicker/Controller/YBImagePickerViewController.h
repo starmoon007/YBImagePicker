@@ -19,7 +19,6 @@
 
 
 
-
 @interface YBImagePickerViewController : UINavigationController
 
 @property (weak, nonatomic) id <YBImagePickerViewControllerDelegate> photo_delegate;

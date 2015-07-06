@@ -28,8 +28,13 @@
 
 @property (strong, nonatomic) ALAssetsLibrary *libray;
 
-/**  相册所有照片对象数组 */
+/** 相册所有照片对象数组 */
 @property (strong, nonatomic) NSMutableArray * photo_model_array;
+
+
+/** 选中的照片对象数组 */
+@property (strong, nonatomic) NSMutableArray * selected_model_array;
+
 
 @property (strong, nonatomic) YBPhotoThumbnailLayout *layout;
 
@@ -46,9 +51,9 @@
 
 @implementation YBPhotoListViewController
 
--(void)dealloc{
-    NSLog(@"%s",__FUNCTION__);
-}
+//-(void)dealloc{
+// NSLog(@"%s",__FUNCTION__);
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -80,8 +85,8 @@
 }
 
 - (void)changeSelectedState{
-    NSInteger selected_photo_count = [YBPhotePickerManager sharedYBPhotePickerManager].selected_photo_count;
-    self.selectedPhotoNumber_label.text = [NSString stringWithFormat:@"%ld",selected_photo_count];
+    NSInteger selected_photo_count = self.selected_model_array.count;
+    self.selectedPhotoNumber_label.text = [NSString stringWithFormat:@"%ld",(long)selected_photo_count];
     
     if (selected_photo_count == 0){
         self.preview_buttom.enabled = NO;
@@ -103,9 +108,11 @@
 }
 
 - (void)cancel{
+    [[YBPhotePickerManager sharedYBPhotePickerManager] removePhotoArray:self.selected_model_array];
     if ([self.delegate respondsToSelector:@selector(didCancelwithYBPhotoListViewController:)]){
         [self.delegate didCancelwithYBPhotoListViewController:self];
     }
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 
@@ -116,6 +123,7 @@
 - (IBAction)previewAction:(id)sender {
     YBOriginalPhotoVC *originalPhotoVC = [[YBOriginalPhotoVC alloc]initWithNibName:@"YBOriginalPhotoVC" bundle:nil];
     NSMutableArray *photo_model_array = [[NSMutableArray alloc]initWithArray:[YBPhotePickerManager sharedYBPhotePickerManager].selected_photo_array];
+    originalPhotoVC.mode = YBOriginalPhotoVCMode_Seleted;
     [photo_model_array sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         YBPhotoModel *model1 = (YBPhotoModel *)obj1;
         YBPhotoModel *model2 = (YBPhotoModel *)obj2;
@@ -157,7 +165,9 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     YBOriginalPhotoVC *originalPhotoVC = [[YBOriginalPhotoVC alloc]initWithNibName:@"YBOriginalPhotoVC" bundle:nil];
+    originalPhotoVC.mode = YBOriginalPhotoVCMode_Seleted;
     originalPhotoVC.photo_model_array = self.photo_model_array;
+    originalPhotoVC.selected_model_array = self.selected_model_array;
     originalPhotoVC.selected_indexPath = indexPath;
     originalPhotoVC.delegate = self;
     [self.navigationController pushViewController:originalPhotoVC animated:YES];
@@ -176,7 +186,13 @@
 #pragma mark - YBPhotoThumbanilCellDelegate
 
 - (void)YBPhotoThumbanilCell:(YBPhotoThumbanilCell *)thumbanilCell didClickSelectedViewWithSelectedState:(BOOL)selected WithPhotoModel:(YBPhotoModel *)photoModel{
-    NSLog(@"%@ 第%ld张", selected ?@"选中" :@"取消",photoModel.indexPath.row);
+    
+    if (selected){
+        [self.selected_model_array addObject:photoModel];
+    }else{
+        [self.selected_model_array removeObject:photoModel];
+    }
+    
     [self changeSelectedState];
 }
 
@@ -187,10 +203,23 @@
 
 
 -(void)YBOriginalPhotoVC:(YBOriginalPhotoVC *)originalPhotoVC changePhotoSelectedStatewithIndexx:(int)index{
+    
+    
     [self changeSelectedState];
     
     [self.photo_collectionView reloadData];
 }
+
+- (void)originalPhotoVC:(YBOriginalPhotoVC *)originalPhotoVC changePhotoSelectedStatewithPhotoModel:(YBPhotoModel *)photo_model{
+    if (photo_model.isSelected){
+        [self.selected_model_array addObject:photo_model];
+    }else{
+        [self.selected_model_array removeObject:photo_model];
+    }
+    [self changeSelectedState];
+    [self.photo_collectionView reloadData];
+}
+
 
 
 #pragma mark - Set and Get
@@ -200,7 +229,6 @@
         
         if (self.showAll_photo){
             [self.libray enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-                NSLog(@"%ld",(long)group.numberOfAssets);
                 if (group != nil) {
                     
                     //设置过滤对象
@@ -243,6 +271,14 @@
         }
     }
     return _photo_model_array;
+}
+
+
+-(NSMutableArray *)selected_model_array{
+    if (_selected_model_array == nil){
+        _selected_model_array = [[NSMutableArray alloc]init];
+    }
+    return _selected_model_array ;
 }
 
 -(ALAssetsLibrary *)libray{

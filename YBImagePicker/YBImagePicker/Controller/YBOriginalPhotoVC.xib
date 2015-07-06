@@ -7,12 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YBOriginalPhotoVC">
             <connections>
-                <outlet property="back_buttom" destination="tpD-ng-2wr" id="ns0-Fn-phO"/>
-                <outlet property="done_buttom" destination="9js-aV-Hfl" id="WFz-Q3-kgH"/>
+                <outlet property="bottom_bar" destination="hgt-8o-M09" id="qb8-u9-gbN"/>
                 <outlet property="number_label" destination="bZe-Q2-XBK" id="a3u-Vp-dzx"/>
                 <outlet property="photo_collectionView" destination="sG4-fx-4Cu" id="0Ms-lR-JBc"/>
                 <outlet property="selected_buttom" destination="rfn-wY-Rpo" id="gIk-Pq-MPD"/>
                 <outlet property="selected_imageView" destination="p6G-W2-Udg" id="Rof-Qe-Tp9"/>
+                <outlet property="top_bar" destination="UUp-kP-91h" id="pob-bt-85z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -51,7 +51,7 @@
                             </connections>
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfn-wY-Rpo">
-                            <rect key="frame" x="262" y="17" width="50" height="30"/>
+                            <rect key="frame" x="270" y="0.0" width="50" height="64"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="0rW-31-MDC"/>
                             </constraints>
@@ -78,7 +78,9 @@
                         <constraint firstAttribute="centerY" secondItem="p6G-W2-Udg" secondAttribute="centerY" constant="-10" id="Fn5-2z-yin"/>
                         <constraint firstAttribute="height" constant="64" id="Jn5-06-tmT"/>
                         <constraint firstAttribute="trailing" secondItem="p6G-W2-Udg" secondAttribute="trailing" constant="10" id="bJs-PI-yZb"/>
-                        <constraint firstAttribute="trailing" secondItem="rfn-wY-Rpo" secondAttribute="trailing" constant="8" id="kPp-xE-qm4"/>
+                        <constraint firstItem="rfn-wY-Rpo" firstAttribute="top" secondItem="UUp-kP-91h" secondAttribute="top" id="hPX-oc-o04"/>
+                        <constraint firstAttribute="bottom" secondItem="rfn-wY-Rpo" secondAttribute="bottom" id="j4Q-Hu-3Rb"/>
+                        <constraint firstAttribute="trailing" secondItem="rfn-wY-Rpo" secondAttribute="trailing" id="kPp-xE-qm4"/>
                         <constraint firstAttribute="centerY" secondItem="pjS-2A-Ijf" secondAttribute="centerY" constant="-10" id="tpD-ng-2wr"/>
                     </constraints>
                 </view>
@@ -138,7 +140,7 @@
                 <constraint firstAttribute="trailing" secondItem="hgt-8o-M09" secondAttribute="trailing" id="zYL-VS-UCV"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="340" y="38"/>
+            <point key="canvasLocation" x="400" y="-17"/>
         </view>
     </objects>
     <resources>

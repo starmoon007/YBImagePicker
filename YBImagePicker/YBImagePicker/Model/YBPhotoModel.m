@@ -20,7 +20,7 @@
 @implementation YBPhotoModel
 
 -(void)dealloc{
-//    NSLog(@"YBPhotoModel dealloc");
+    
 }
 
 
